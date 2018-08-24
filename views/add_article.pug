@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 #{title}
+    
+
+    form(action="/articles/add" method="POST")
+        #form-group
+            label Title :
+            input.form-control(type="text", placeholder="Enter Title" name="title")
+        br
+        #form-group
+            label Messege :
+            textarea.form-control(type="text" name="body",  placeholder="Enter Your Text Here" )
+        br
+        input.btn.btn-primary(type="submit", value="Add")

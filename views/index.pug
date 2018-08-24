@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul.list-group
+        each countArticle, i in articles
+            li.list-group-item
+                a(href="/articles/"+countArticle._id)=countArticle.title

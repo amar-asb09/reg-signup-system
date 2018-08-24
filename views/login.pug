@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    
+    div.container
+            h1(style="text-align:center") User Login
+            form(action="/users/login" method="POST")
+                #form-group
+                    label Username :
+                    input.form-control(type="username" name="username",  placeholder="Username" )
+                br
+                #form-group
+                    label Password :
+                    input.form-control(type="password" name="password",  placeholder="Password" )
+                br
+                input.btn.btn-success(type="submit", value="Login")

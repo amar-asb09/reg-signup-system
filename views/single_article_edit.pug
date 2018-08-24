@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1 #{title}
+    
+
+    form(action="/articles/Edit/"+article._id, method="POST")
+        #form-group
+            label Title :
+            input.form-control(type="text", placeholder="Enter Title" name="title", value=article.title)
+        br
+        #form-group
+            label Messege :
+            textarea.form-control(type="text" name="body",  placeholder="Enter Your Text Here")=article.body
+        br
+        input.btn.btn-primary(type="submit", value="Save")
+        span(style='margin-left:20px;')
+        
+        a#cancel.btn.btn-default(href='/articles/'+article._id, name='cancel') Cancel
+        label(style='float:right;display:block;margin-right:0px;clear:left;') Author : #{user.name} 
+        
+
+

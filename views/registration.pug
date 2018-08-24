@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    
+    div.container
+        div.container
+            h1(style="text-align:center") User Registration
+            form(action="/users/register" method="POST")
+                #form-group
+                    label Name :
+                    input.form-control(type="text", name="name", placeholder="Your Good Name Please" )
+                br
+                #form-group
+                    label Email :
+                    input.form-control(type="email", name="email", placeholder="Enter Emial Id"  )
+                br
+                #form-group
+                    label Username :
+                    input.form-control(type="text" name="username",  placeholder="Username" )
+                br
+                #form-group
+                    label Password :
+                    input.form-control(type="password" name="password",  placeholder="Password" )
+                br
+                #form-group
+                    label Retype Password :
+                    input.form-control(type="password" name="password2",  placeholder="Retype-password" )
+                br
+                input.btn.btn-success(type="submit", value="Register")

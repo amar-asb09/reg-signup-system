@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    h1= article.title
+    h5 Created by #{author}
+    p= article.body
+
+    hr
+    if user
+        if user.id == article.author
+            a.btn.btn-default(href="/articles/edit/"+article._id, style='width:100px;') Edit
+            span(style='margin-left:20px;')
+            a#cancel.btn.btn-default(href='/', name='cancel', style='width:100px;') Cancel
+            span(style='margin-left:20px;')
+            a.btn.btn-danger.delete-article(href="#", data-id=article._id, style='float:right;display:block;margin-right:0px;clear:left;') Delete
